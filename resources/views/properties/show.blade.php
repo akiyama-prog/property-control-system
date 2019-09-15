@@ -69,5 +69,8 @@
     </table>
     
     {!! link_to_route('properties.edit','編集する',[ $property -> id],['class'=>'btn btn-primary btn-block']) !!}
-
+    
+    {!! Form::model($property,['route'=>['properties.destroy',$property -> id], 'method' => 'delete']) !!}
+        {!! Form::submit('削除する',['class' => 'btn btn-danger btn-block mt-1']) !!}
+    {!! Form::close() !!}
 @endsection        
