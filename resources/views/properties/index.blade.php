@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>{!! link_to_route('properties.create', '新規物件追加',[], ['class'=> 'btn btn-success']) !!}</h2>
+    {!! link_to_route('properties.create', '新規物件追加',[], ['class'=> 'btn btn-success']) !!}
 
         <table class="table table-hover table-condensed" style="td {white-space: nowrap;}">
             <thead>
