@@ -15,3 +15,17 @@ th{
     background:#5a3333;
     color: white;
 }
+
+h1{
+    margin:50px;
+   
+}
+
+header h1 a{
+     color: #5a7184;
+}
+
+header h1 a:hover{
+      text-decoration: none;
+      
+}

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {!! link_to_route('properties.create', '新規物件追加',[], ['class'=> 'btn btn-success']) !!}
+    {!! link_to_route('properties.create', '新規物件追加',[], ['class'=> 'btn btn-success btn-block mb-2']) !!}
 
         <table class="table table-hover table-condensed" style="td {white-space: nowrap;}">
             <thead>
@@ -29,7 +29,11 @@
                     <td>{!! link_to_route('properties.show', $property->building_name, ['id' => $property]) !!}</td>
                     <td>{{ $property->price }}</td>
                     <td>{{ $property->full_price }}</td>
-                    <td>{{ round($property->full_price / ($property->price * 10000) * 100, 2)}}%</td>
+                    @if($property -> price)
+                    <td>{{ round($property->full_price / ($property->price * 10000) * 100, 2) }}% </td>
+                    @else
+                    <td> - </td>
+                    @endif
                     <td>{{ $property->site_area }}</td>
                     <td>{{ $property->building_area }}</td>
                     <td>{{ $property->architecture }}</td>
@@ -44,4 +48,7 @@
                 @endforeach
             </tbody>
         </table>
+        
+        {{ $properties -> links('pagination::bootstrap-4') }}
+        
 @endsection

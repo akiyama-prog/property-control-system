@@ -14,7 +14,7 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $properties = Property::paginate(100);
         
         return view('properties.index',[
             'properties' => $properties,

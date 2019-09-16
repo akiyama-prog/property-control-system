@@ -22,7 +22,9 @@
         
         <tr>
             <th>利回り</th>
+            @if( $property ->price )
             <td>{{ round($property -> full_price / ($property -> price*10000) *100, 2) }}%</td>
+            @endif
         </tr>
     </table>
     
