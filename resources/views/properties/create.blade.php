@@ -43,7 +43,7 @@
             
             <tr>
             <th>{!! Form::label('architecture', '構造') !!}</th>
-            <td>{!! Form::select('architecture',['選択してください','RC'=>'RC', '軽骨'=>'軽骨','軟鉄'=>'軟鉄','木造'=>'木造'],old('architecture'),['class'=>'select']) !!}</td>
+            <td>{!! Form::select('architecture',['選択してください','RC'=>'RC', '鉄骨'=>'鉄骨','軽鉄'=>'軽鉄','木造'=>'木造'],old('architecture'),['class'=>'select']) !!}</td>
             </tr>
             </div>
         </table>

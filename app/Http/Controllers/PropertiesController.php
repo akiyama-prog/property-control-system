@@ -46,17 +46,17 @@ class PropertiesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'building_name'=> 'required|max:191',
-            'price' => 'required|max:191',
-            'full_price' => 'required|max:191',
-            'site_area' => 'required|max:191',
-            'building_area' => 'required|max:191',
+            'building_name'=> 'required|string|max:191',
+            'price' => 'required|numeric',
+            'full_price' => 'required|numeric',
+            'site_area' => 'required|numeric',
+            'building_area' => 'required|numeric',
             'architecture' => 'required',
             'prefecture' => 'required',
-            'city' => 'required|max:191',
-            'address' => 'required|max:191',
-            'station' => 'required|max:191',
-            'on_foot' => 'required|max:191',
+            'city' => 'required|string|max:191',
+            'address' => 'required|string|max:191',
+            'station' => 'required|string|max:191',
+            'on_foot' => 'required|numeric|max:191',
             ]);
         
         $property = new Property;
@@ -117,17 +117,17 @@ class PropertiesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'building_name'=> 'required|max:191',
-            'price' => 'required|max:191',
-            'full_price' => 'required|max:191',
-            'site_area' => 'required|max:191',
-            'building_area' => 'required|max:191',
+            'building_name'=> 'required|string|max:191',
+            'price' => 'required|numeric',
+            'full_price' => 'required|numeric',
+            'site_area' => 'required|numeric',
+            'building_area' => 'required|numeric',
             'architecture' => 'required',
             'prefecture' => 'required',
-            'city' => 'required|max:191',
-            'address' => 'required|max:191',
-            'station' => 'required|max:191',
-            'on_foot' => 'required|max:191',
+            'city' => 'required|string|max:191',
+            'address' => 'required|string|max:191',
+            'station' => 'required|string|max:191',
+            'on_foot' => 'required|numeric|max:191',
             ]);
         
         $property =Property::find($id);

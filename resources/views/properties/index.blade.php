@@ -3,15 +3,19 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-7">
+            <div class="col-6">
                 {!! link_to_route('properties.create', '新規物件追加',[], ['class'=> 'btn btn-success mb-2']) !!}
             </div>
-            
+            <div class="col-3">
                 {!! Form::open(['route'=>'properties.search', 'method'=>'get' ]) !!}
                     {!! Form::text('keyword',null,['class'=>'form-control', 'placeholder'=>'物件名を入力']) !!}
+            </div>
+            <div class="col-3">
                     {!! Form::submit('検索', ['class'=>'btn btn-info']) !!}
                 {!! Form::close() !!}
-          
+            </div>
+        </div>
+    </div>
         <table class="table table-hover table-sm">
             <thead>
                 <tr>
