@@ -12,10 +12,11 @@ class PropertiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $properties = Property::paginate(100);
         
+            $properties = Property::paginate(100);
+
         return view('properties.index',[
             'properties' => $properties,
             ]);
@@ -159,5 +160,23 @@ class PropertiesController extends Controller
         $property->delete();
         
         return redirect('/');
+    }
+    
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        
+        if(!empty($keyword)){
+            $properties = Property::where('building_name','like','%'.$keyword.'%')
+                ->paginate(100);
+             
+        }else{
+            $properties= Property::paginate(100);
+        }
+        
+        return view('properties.find',[
+            'properties' => $properties,
+            'keyword' => $keyword,
+            ]);
     }
 }

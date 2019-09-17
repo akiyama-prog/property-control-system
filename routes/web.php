@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use App\Property;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +16,5 @@
 Route::get('/', 'PropertiesController@index');
 
 Route::resource('properties', 'PropertiesController');
+
+Route::get('search','PropertiesController@search')->name('properties.search');
