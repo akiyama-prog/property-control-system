@@ -11,7 +11,7 @@
             <div class="col-4 form-inline">
                 {!! Form::open(['route'=>'properties.search', 'method'=>'get' ]) !!}
                     {!! Form::text('keyword',null,['class'=>'form-control', 'placeholder'=>'物件名を入力']) !!}
-                    {!! Form::submit('検索', ['class'=>'btn btn-info　form-inline']) !!}
+                    {!! Form::submit('検索', ['class'=>'btn btn-info']) !!}
                 {!! Form::close() !!}
             </div>
             
